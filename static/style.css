@@ -1,0 +1,647 @@
+* { margin: 0; padding: 0; box-sizing: border-box; border: 0;}
+
+:root {
+  --color-prettylights-syntax-fg-default: #ededed;
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+  --color-fg-default: #e1e0e1;
+  --color-bg-default: #202025;
+  --color-bg-muted: #313137;
+  --color-fg-muted: #d2c2fd;
+  --color-canvas-default: #ffffff;
+  --color-canvas-subtle: #2b333f;
+  --color-border-default: #916eff;
+  --color-border-muted: #21262d;
+  --color-neutral-muted: rgba(110, 118, 129, .4);
+  --color-accent-fg: #58a6ff;
+  --color-accent-emphasis: #E91E63;
+  --color-danger-fg: #f85149;
+}
+
+body {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-default);
+}
+
+.hero {
+  font-size: 4vw;
+  text-align: center;
+  background: linear-gradient(60deg,  var(--color-border-default), var(--color-fg-muted), var(--color-accent-emphasis));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 1200px) {
+  .hero { font-size: 2vw; }
+}
+
+.content {
+  word-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content:before {
+  content: "";
+  display: table
+}
+
+.content:after {
+  clear: both;
+  content: "";
+  display: table
+}
+
+.content>:first-child {
+  margin-top: 0 !important
+}
+
+.content>:last-child {
+  margin-bottom: 0 !important
+}
+
+.content a:not([href]) {
+  color: inherit;
+  text-decoration: none
+}
+
+.content .absent {
+  color: var(--color-danger-fg)
+}
+
+.content .anchor {
+  float: left;
+  margin-left: -20px;
+  padding-right: 4px;
+  line-height: 1
+}
+
+.content .anchor:focus {
+  outline: none
+}
+
+.content p,
+.content blockquote,
+.content ul,
+.content ol,
+.content dl,
+.content table,
+.content pre,
+.content details {
+  margin-top: 0;
+  margin-bottom: 16px
+}
+
+.content hr {
+  height: .25em;
+  background-color: var(--color-border-default);
+  border: 0;
+  margin: 24px 0;
+}
+
+.content blockquote {
+  color: var(--color-fg-muted);
+  background-color: var(--color-bg-muted);
+  border-left: .25em solid var(--color-border-default);
+  padding: .5em 1em;
+}
+
+.content blockquote>:first-child {
+  margin-top: 0
+}
+
+.content blockquote>:last-child {
+  margin-bottom: 0
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25
+}
+
+.content h1 .octicon-link,
+.content h2 .octicon-link,
+.content h3 .octicon-link,
+.content h4 .octicon-link,
+.content h5 .octicon-link,
+.content h6 .octicon-link {
+  color: var(--color-fg-default);
+  vertical-align: middle;
+  visibility: hidden
+}
+
+.content h1:hover .anchor,
+.content h2:hover .anchor,
+.content h3:hover .anchor,
+.content h4:hover .anchor,
+.content h5:hover .anchor,
+.content h6:hover .anchor {
+  text-decoration: none
+}
+
+.content h1:hover .anchor .octicon-link,
+.content h2:hover .anchor .octicon-link,
+.content h3:hover .anchor .octicon-link,
+.content h4:hover .anchor .octicon-link,
+.content h5:hover .anchor .octicon-link,
+.content h6:hover .anchor .octicon-link {
+  visibility: visible
+}
+
+.content h1 tt,
+.content h1 code,
+.content h2 tt,
+.content h2 code,
+.content h3 tt,
+.content h3 code,
+.content h4 tt,
+.content h4 code,
+.content h5 tt,
+.content h5 code,
+.content h6 tt,
+.content h6 code {
+  font-size: inherit;
+  padding: 0 .2em
+}
+
+.content h1 {
+  padding-bottom: .3em;
+  font-size: 2em
+}
+
+.content h2 {
+  padding-bottom: .3em;
+  font-size: 1.5em
+}
+
+.content h3 {
+  font-size: 1.25em
+}
+
+.content h4 {
+  font-size: 1em
+}
+
+.content h5 {
+  font-size: .875em
+}
+
+.content h6 {
+  color: var(--color-fg-muted);
+  font-size: .85em
+}
+
+.content summary h1,
+.content summary h2,
+.content summary h3,
+.content summary h4,
+.content summary h5,
+.content summary h6 {
+  display: inline-block
+}
+
+.content summary h1 .anchor,
+.content summary h2 .anchor,
+.content summary h3 .anchor,
+.content summary h4 .anchor,
+.content summary h5 .anchor,
+.content summary h6 .anchor {
+  margin-left: -40px
+}
+
+.content summary h1,
+.content summary h2 {
+  border-bottom: 0;
+  padding-bottom: 0
+}
+
+.content ul,
+.content ol {
+  padding-left: 2em
+}
+
+.content ul.no-list,
+.content ol.no-list {
+  list-style-type: none
+}
+
+.content ol[type="1"] {
+  list-style-type: decimal
+}
+
+.content ol[type=a] {
+  list-style-type: lower-alpha
+}
+
+.content ol[type=i] {
+  list-style-type: lower-roman
+}
+
+.content div>ol:not([type]) {
+  list-style-type: decimal
+}
+
+.content ul ul,
+.content ul ol,
+.content ol ol,
+.content ol ul {
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+.content li>p {
+  margin-top: 16px
+}
+
+.content li+li {
+  margin-top: .25em
+}
+
+.content dl dt {
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600
+}
+
+.content dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px
+}
+
+.content table {
+  width: 100%;
+  width: -webkit-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  max-width: 100%;
+  display: block;
+  overflow: auto
+}
+
+.content table th {
+  font-weight: 600
+}
+
+.content table th,
+.content table td {
+  border: 1px solid var(--color-border-default);
+  padding: 6px 13px
+}
+
+.content table tr {
+  background-color: var(--color-canvas-default);
+  border-top: 1px solid var(--color-border-muted)
+}
+
+.content table tr:nth-child(2n) {
+  background-color: var(--color-canvas-subtle)
+}
+
+.content table img {
+  background-color: rgba(0, 0, 0, 0)
+}
+
+.content img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: var(--color-canvas-default)
+}
+
+.content img[align=right] {
+  padding-left: 20px
+}
+
+.content img[align=left] {
+  padding-right: 20px
+}
+
+.content .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: rgba(0, 0, 0, 0)
+}
+
+.content span.frame {
+  display: block;
+  overflow: hidden
+}
+
+.content span.frame>span {
+  float: left;
+  width: auto;
+  border: 1px solid var(--color-border-default);
+  margin: 13px 0 0;
+  padding: 7px;
+  display: block;
+  overflow: hidden
+}
+
+.content span.frame span img {
+  float: left;
+  display: block
+}
+
+.content span.frame span span {
+  clear: both;
+  color: var(--color-fg-default);
+  padding: 5px 0 0;
+  display: block
+}
+
+.content span.align-center {
+  clear: both;
+  display: block;
+  overflow: hidden
+}
+
+.content span.align-center>span {
+  text-align: center;
+  margin: 13px auto 0;
+  display: block;
+  overflow: hidden
+}
+
+.content span.align-center span img {
+  text-align: center;
+  margin: 0 auto
+}
+
+.content span.align-right {
+  clear: both;
+  display: block;
+  overflow: hidden
+}
+
+.content span.align-right>span {
+  text-align: right;
+  margin: 13px 0 0;
+  display: block;
+  overflow: hidden
+}
+
+.content span.align-right span img {
+  text-align: right;
+}
+
+.content span.float-left {
+  float: left;
+  margin-right: 13px;
+  display: block;
+  overflow: hidden
+}
+
+.content span.float-left span {
+  margin: 13px 0 0
+}
+
+.content span.float-right {
+  float: right;
+  margin-left: 13px;
+  display: block;
+  overflow: hidden
+}
+
+.content span.float-right>span {
+  text-align: right;
+  margin: 13px auto 0;
+  display: block;
+  overflow: hidden
+}
+
+.content code,
+.content tt {
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+  padding: .2em .4em;
+  font-size: 85%
+}
+
+.content code br,
+.content tt br {
+  display: none
+}
+
+.content del code {
+  -webkit-text-decoration: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit
+}
+
+.content samp {
+  font-size: 85%
+}
+
+.content pre {
+  color: var(--color-prettylights-syntax-fg-default);
+  word-wrap: normal
+}
+
+.content pre code {
+  font-size: 100%
+}
+
+.content pre>code {
+  word-break: normal;
+  white-space: pre;
+  background: 0 0;
+  border: 0;
+}
+
+.highlight {
+  margin-bottom: 16px
+}
+
+.highlight pre {
+  word-break: normal;
+  margin-bottom: 0
+}
+
+
+.highlight pre,
+.content pre {
+  color: var(--color-prettylights-syntax-fg-default);
+  background-color: var(--color-canvas-subtle);
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto
+}
+
+.content pre code,
+.content pre tt {
+  max-width: auto;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: rgba(0, 0, 0, 0);
+  display: inline;
+  overflow: visible
+}
+
+.content .csv-data td,
+.content .csv-data th {
+  text-align: left;
+  white-space: nowrap;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 1;
+  overflow: hidden
+}
+
+.content .csv-data .blob-num {
+  text-align: right;
+  background: var(--color-canvas-default);
+  border: 0;
+  padding: 10px 8px 9px
+}
+
+.content .csv-data tr {
+  border-top: 0
+}
+
+
+.content .csv-data th {
+  background: var(--color-canvas-subtle);
+  border-top: 0;
+  font-weight: 600
+}
+
+
+.content .footnotes ol {
+  padding-left: 16px
+}
+
+.content .footnotes li {
+  position: relative
+}
+
+.content .footnotes li:target:before {
+  pointer-events: none;
+  content: "";
+  border: 2px solid var(--color-accent-emphasis);
+  border-radius: 6px;
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -24px;
+  right: -8px
+}
+
+.content .footnotes li:target {
+  color: var(--color-fg-default)
+}
+
+.content .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace
+}
+
+.content a {
+  color: var(--color-accent-fg);
+  text-decoration: none
+}
+
+.content a:hover {
+  text-decoration: underline
+}
+
+.content iframe {
+  background-color: #fff;
+  border: 0;
+  margin-bottom: 16px
+}
+
+.content svg.octicon {
+  fill: currentColor
+}
+
+.content .anchor>.octicon {
+  display: inline
+}
+
+.content figcaption {
+  text-align: center;
+  padding-top: 2px
+}
+
+.highlight .token.keyword {
+  color: var(--color-prettylights-syntax-keyword)
+}
+
+.highlight .token.tag .token.class-name,
+.highlight .token.tag .token.script .token.punctuation {
+  color: var(--color-prettylights-syntax-storage-modifier-import)
+}
+
+.highlight .token.operator,
+.highlight .token.number,
+.highlight .token.boolean,
+.highlight .token.tag .token.punctuation,
+.highlight .token.tag .token.script .token.script-punctuation,
+.highlight .token.tag .token.attr-name {
+  color: var(--color-prettylights-syntax-constant)
+}
+
+
+.highlight .token.function {
+  color: var(--color-prettylights-syntax-entity)
+}
+
+.highlight .token.string {
+  color: var(--color-prettylights-syntax-string)
+}
+
+.highlight .token.comment {
+  color: var(--color-prettylights-syntax-comment)
+}
+
+.highlight .token.class-name {
+  color: var(--color-prettylights-syntax-variable)
+}
+
+.highlight .token.regex {
+  color: var(--color-prettylights-syntax-string)
+}
+
+.highlight .token.regex .regex-delimiter {
+  color: var(--color-prettylights-syntax-constant)
+}
+
+.highlight .token.tag .token.tag,
+.highlight .token.property {
+  color: var(--color-prettylights-syntax-entity-tag)
+}
+
+.highlight .token.deleted {
+  color: var(--color-prettylights-syntax-markup-deleted-text);
+  background-color: var(--color-prettylights-syntax-markup-deleted-bg)
+}
+
+.highlight .token.inserted {
+  color: var(--color-prettylights-syntax-markup-inserted-text);
+  background-color: var(--color-prettylights-syntax-markup-inserted-bg)
+}
