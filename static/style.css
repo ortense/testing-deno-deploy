@@ -36,8 +36,12 @@ body {
 }
 
 .hero {
-  font-size: 4vw;
   text-align: center;
+}
+
+.hero h1 {
+  font-size: 4vw;
+
   background: linear-gradient(60deg,  var(--color-border-default), var(--color-fg-muted), var(--color-accent-emphasis));
   background-clip: text;
   -webkit-background-clip: text;

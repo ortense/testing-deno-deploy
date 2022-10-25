@@ -23,6 +23,7 @@ export default function Home({ data }:PageProps<HomeProps>) {
       <section className="content Home">
         <div className="hero">
           <h1>Marcus Ortense</h1>
+          <p>This app was created just to test <a href="https://deno.com/deploy">Deno Deploy</a></p>
         </div>
         {data.posts.map((post) => {
           return <a className="post" href={`/posts/${post.slug}`}>
