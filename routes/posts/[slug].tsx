@@ -1,12 +1,11 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "../../components/Head.tsx";
-
-import { getContent, PostMeta } from "../../lib/helper/mod.ts";
+import { getContent, PostAttrs } from "../../lib/helper/mod.ts";
 
 type PostProps = {
   style: string;
   content: string;
-  attrs: PostMeta;
+  attrs: PostAttrs;
 };
 
 export const handler: Handlers<PostProps> = {
